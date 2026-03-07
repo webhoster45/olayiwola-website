@@ -39,6 +39,45 @@
 </head>
 <body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display">
 <!-- Header / Nav -->
+ <div id="bankModal" class="hidden fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm">
+    <div class="bg-white dark:bg-slate-900 w-full max-w-md rounded-3xl p-8 shadow-2xl relative border border-slate-200 dark:border-slate-800 animate-in fade-in zoom-in duration-300">
+        <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 dark:hover:text-white transition-colors">
+            <span class="material-symbols-outlined text-3xl">close</span>
+        </button>
+        
+        <div class="text-center mb-8">
+            <div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span class="material-symbols-outlined text-primary text-4xl">payments</span>
+            </div>
+            <h3 class="text-2xl font-black">Complete Registration</h3>
+            <p class="text-slate-500 dark:text-slate-400 mt-2">Transfer the session fee to the account below</p>
+        </div>
+
+        <div class="space-y-5 bg-slate-50 dark:bg-slate-800/50 p-6 rounded-2xl border border-slate-100 dark:border-slate-700 mb-8">
+            <div class="flex justify-between items-center border-b border-slate-200 dark:border-slate-700 pb-3">
+                <span class="text-xs font-bold uppercase text-slate-400">Bank Name</span>
+                <span class="font-bold text-slate-800 dark:text-white">YOUR BANK NAME HERE</span>
+            </div>
+            <div class="flex justify-between items-center border-b border-slate-200 dark:border-slate-700 pb-3">
+                <span class="text-xs font-bold uppercase text-slate-400">Account No.</span>
+                <span class="text-xl font-black text-primary tracking-widest">0123456789</span>
+            </div>
+            <div class="flex justify-between items-center">
+                <span class="text-xs font-bold uppercase text-slate-400">Account Name</span>
+                <span class="font-bold text-slate-800 dark:text-white">OLAYIWOLA ABE</span>
+            </div>
+        </div>
+
+        <div class="space-y-4">
+            <a href="https://wa.me/2348132874839?text=Hello%20Sir%2C%20I%20have%20just%20made%20the%20payment%20for%20your%20tutoring%20session.%20Here%20is%20my%20receipt%20for%20confirmation." 
+               class="flex items-center justify-center gap-3 bg-[#25D366] text-white w-full py-4 rounded-xl font-bold text-lg hover:scale-[1.02] active:scale-95 transition-all shadow-lg shadow-green-500/20">
+                <span class="material-symbols-outlined">send_to_mobile</span>
+                I Have Paid, Send Receipt
+            </a>
+            <p class="text-center text-[11px] text-slate-400 font-medium">Click the button above to be redirected to WhatsApp.</p>
+        </div>
+    </div>
+</div>
 <header class="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md">
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 <div class="flex items-center justify-between h-16 sm:h-20">
@@ -53,9 +92,9 @@
 <a class="text-sm font-medium hover:text-primary transition-colors" href="#pricing">Pricing</a>
 </nav>
 <div class="flex items-center gap-4">
-<a class="bg-primary text-white px-5 py-2 rounded-lg text-sm font-bold hover:bg-primary/90 transition-all shadow-md" href="https://selar.co/71j16i7h42" target="_blank">
-                        Register Now
-                    </a>
+<button onclick="openModal()" class="bg-primary text-white px-5 py-2 rounded-lg text-sm font-bold hover:bg-primary/90 transition-all shadow-md">
+                    Register Now
+                </button>
 </div>
 </div>
 </div>
@@ -78,7 +117,7 @@
                             Helping students achieve academic success for over two decades through proven pedagogical methods.
                         </p>
 <div class="flex flex-col sm:flex-row gap-4">
-<a class="flex items-center justify-center gap-2 bg-primary text-white px-8 py-4 rounded-xl text-lg font-bold hover:scale-[1.02] transition-transform shadow-xl" href="https://selar.co/71j16i7h42">
+<a class="flex items-center justify-center gap-2 bg-primary text-white px-8 py-4 rounded-xl text-lg font-bold hover:scale-[1.02] transition-transform shadow-xl" href="#pricing">
                                 Join The Program
                                 <span class="material-symbols-outlined">arrow_forward</span>
 </a>
@@ -332,9 +371,9 @@
 </div>
 </div>
 <div class="flex flex-col sm:flex-row gap-4 justify-center">
-<a class="bg-primary text-white px-10 py-5 rounded-2xl text-xl font-black hover:scale-105 transition-transform shadow-xl" href="https://selar.co/71j16i7h42">
-                            Register on Selar
-                        </a>
+<button onclick="openModal()" class="bg-primary text-white px-10 py-5 rounded-2xl text-xl font-black hover:scale-105 transition-transform shadow-xl">
+                        Get Bank Details
+                    </button>
 <a class="bg-[#25D366] text-white px-10 py-5 rounded-2xl text-xl font-black hover:scale-105 transition-transform shadow-xl flex items-center justify-center gap-2" href="https://wa.me/2348132874839">
                             Chat on WhatsApp
                         </a>
@@ -363,16 +402,26 @@
 </a>
 </div>
 <div class="pt-8 border-t border-slate-800 text-slate-500 text-sm">
-                © 2026 Olayiwola Abe Tutoring. All rights reserved.
+                © 2024 Olayiwola Abe Tutoring. All rights reserved.
             </div>
-<p class="text-gray-600 text-sm mt-4 text-center">
-  Website built by 
-  <a href="https://iam-walex.netlify.app" 
-     class="text-blue-600 font-semibold hover:text-blue-800 hover:underline transition-colors duration-200">
-    olawale
-  </a>
-</p>
-
 </div>
 </footer>
+<script>
+    const modal = document.getElementById('bankModal');
+
+    function openModal() {
+        modal.classList.remove('hidden');
+        document.body.classList.add('modal-open');
+    }
+
+    function closeModal() {
+        modal.classList.add('hidden');
+        document.body.classList.remove('modal-open');
+    }
+
+    // Close on background click
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+    });
+</script>
 </body></html>
